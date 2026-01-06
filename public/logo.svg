@@ -1,0 +1,113 @@
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Outer circle text path -->
+  <defs>
+    <path
+      id="textCircleTop"
+      d="M 100,100 m -70,0 a 70,70 0 1,1 140,0"
+      fill="none"
+    />
+    <path
+      id="textCircleBottom"
+      d="M 100,100 m 70,0 a 70,70 0 1,1 -140,0"
+      fill="none"
+    />
+  </defs>
+
+  <!-- Top text - "AI PARTNER" -->
+  <text
+    fill="#2D2926"
+    style="font-size: 14px; font-family: system-ui, sans-serif; font-weight: 600; letter-spacing: 0.15em;"
+  >
+    <textPath href="#textCircleTop" startOffset="50%" text-anchor="middle">
+      AI PARTNER
+    </textPath>
+  </text>
+
+  <!-- Bottom text - "COMPANY" -->
+  <text
+    fill="#2D2926"
+    style="font-size: 14px; font-family: system-ui, sans-serif; font-weight: 600; letter-spacing: 0.15em;"
+  >
+    <textPath href="#textCircleBottom" startOffset="50%" text-anchor="middle">
+      COMPANY
+    </textPath>
+  </text>
+
+  <!-- Small decorative dots -->
+  <circle cx="30" cy="100" r="2" fill="#2D2926" />
+  <circle cx="170" cy="100" r="2" fill="#2D2926" />
+
+  <!-- Globe icon in center -->
+  <g transform="translate(100, 100)">
+    <!-- Outer globe circle -->
+    <circle
+      cx="0"
+      cy="0"
+      r="32"
+      stroke="#2D2926"
+      stroke-width="1.5"
+      fill="none"
+    />
+
+    <!-- Vertical ellipse (meridian) -->
+    <ellipse
+      cx="0"
+      cy="0"
+      rx="16"
+      ry="32"
+      stroke="#2D2926"
+      stroke-width="1.5"
+      fill="none"
+    />
+
+    <!-- Horizontal line (equator) -->
+    <line
+      x1="-32"
+      y1="0"
+      x2="32"
+      y2="0"
+      stroke="#2D2926"
+      stroke-width="1.5"
+    />
+
+    <!-- Top latitude line -->
+    <ellipse
+      cx="0"
+      cy="-14"
+      rx="28"
+      ry="8"
+      stroke="#2D2926"
+      stroke-width="1"
+      fill="none"
+    />
+
+    <!-- Bottom latitude line -->
+    <ellipse
+      cx="0"
+      cy="14"
+      rx="28"
+      ry="8"
+      stroke="#2D2926"
+      stroke-width="1"
+      fill="none"
+    />
+
+    <!-- Second vertical meridian -->
+    <ellipse
+      cx="0"
+      cy="0"
+      rx="28"
+      ry="32"
+      stroke="#2D2926"
+      stroke-width="1"
+      fill="none"
+      opacity="0.5"
+    />
+  </g>
+</svg>

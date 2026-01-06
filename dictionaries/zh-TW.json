@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "scheduleCall": "奪回你的時間"
+  },
+  "hero": {
+    "headline1": "幫助 YouTuber",
+    "headline2": "產出提升 10 倍",
+    "subheadline": "我們打造 AI 系統處理你的剪輯、研究和營運 — 讓你專注於製作真正重要的影片。",
+    "cta": "奪回你的時間",
+    "scroll": "向下捲動"
+  },
+  "value": {
+    "label": "為何選擇我們",
+    "headline1": "我們交付成果，",
+    "headline2": "不是簡報",
+    "description": "其他機構諮詢完就走人。我們深入你的頻道，打造客製 AI 工作流程，直到數據成長才離開。你的成長是我們唯一的 KPI。",
+    "benefit1Title": "交付，而非建議",
+    "benefit1Desc": "我們不會給你一份策略文件。我們打造能把你剪輯時間砍半的 AI 系統。",
+    "benefit2Title": "專為 YouTube 打造",
+    "benefit2Desc": "從腳本研究到縮圖 A/B 測試，從留言管理到業配洽談 — 全部都能自動化。",
+    "benefit3Title": "真正有效的 AI",
+    "benefit3Desc": "不是 ChatGPT 套殼。是根據你的聲音、風格、觀眾訓練的客製 AI 代理。"
+  },
+  "process": {
+    "label": "合作流程",
+    "headline": "30 天內從混亂到流暢",
+    "step1Title": "審計",
+    "step1Desc": "我們盤點你在鏡頭外花的每一小時。研究、剪輯、排程、行政 — 找出 80% 能用 AI 處理的工作。",
+    "step2Title": "排序",
+    "step2Desc": "我們按「節省時間 x 發生頻率」排序機會。大多數頻道在第一個衝刺期就能每週省下 15-20 小時。",
+    "step3Title": "部署",
+    "step3Desc": "我們交付 24/7 運作的客製 AI 代理。自動化剪輯流程、研究助理、留言管理員。全部按你的標準訓練。"
+  },
+  "mission": {
+    "label": "我們的使命",
+    "headline1": "YouTuber 應該專注拍片，",
+    "headline2": "而非管理事業",
+    "description": "你的觀眾不在乎你的後台運作，他們只在乎你的內容。我們處理那些看不見的工作，讓你投入的每一小時都能轉化成他們看見的東西。",
+    "stat1Value": "15+",
+    "stat1Label": "小時/週 省下",
+    "stat2Value": "零",
+    "stat2Label": "現成工具",
+    "stat3Value": "24/7",
+    "stat3Label": "AI 從不休息"
+  },
+  "contact": {
+    "label": "立即開始",
+    "headline": "準備好讓產出翻倍嗎？",
+    "description": "看看你在非創作工作上浪費了多少時間。免費 30 分鐘審計 — 沒有推銷，只有數據。",
+    "companyName": "AI Partner Company",
+    "tagline": "幫助 YouTuber 產出提升 10 倍",
+    "cta": "獲取免費審計",
+    "note": "30 分鐘頻道審計 • 帶走可執行的洞察"
+  },
+  "footer": {
+    "companyName": "AI Partner Company",
+    "copyright": "版權所有。"
+  }
+}

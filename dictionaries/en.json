@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "scheduleCall": "Get Your Time Back"
+  },
+  "hero": {
+    "headline1": "Helping YouTubers",
+    "headline2": "10x their output",
+    "subheadline": "We build AI systems that handle your editing, research, and operations — so you can focus on making videos that matter.",
+    "cta": "Get Your Time Back",
+    "scroll": "Scroll"
+  },
+  "value": {
+    "label": "Why Partner With Us",
+    "headline1": "We ship results,",
+    "headline2": "not slide decks",
+    "description": "Other agencies consult and leave. We embed with your channel, build custom AI workflows, and stay until the metrics move. Your growth is our only KPI.",
+    "benefit1Title": "Ship, Don't Advise",
+    "benefit1Desc": "We don't hand you a strategy doc. We build working AI systems that cut your editing time in half.",
+    "benefit2Title": "YouTube-Native",
+    "benefit2Desc": "From script research to thumbnail A/B testing, from comment management to sponsor outreach — we've automated it all.",
+    "benefit3Title": "AI That Actually Works",
+    "benefit3Desc": "Not ChatGPT wrappers. Custom AI agents trained on your voice, your style, your audience."
+  },
+  "process": {
+    "label": "Our Process",
+    "headline": "From chaos to flow in 30 days",
+    "step1Title": "Audit",
+    "step1Desc": "We map every hour you spend off-camera. Research, editing, scheduling, admin — we find the 80% that AI can handle.",
+    "step2Title": "Prioritize",
+    "step2Desc": "We rank opportunities by time saved x frequency. Most channels recover 15-20 hours per week in the first sprint.",
+    "step3Title": "Deploy",
+    "step3Desc": "We ship custom AI agents that run 24/7. Automated editing pipelines. Research assistants. Comment moderators. All trained on your standards."
+  },
+  "mission": {
+    "label": "Our Mission",
+    "headline1": "YouTubers should make videos,",
+    "headline2": "not manage businesses",
+    "description": "Your audience doesn't care about your backend. They care about your content. We handle the invisible work so every hour you invest goes into what they see.",
+    "stat1Value": "15+",
+    "stat1Label": "hrs/week recovered",
+    "stat2Value": "Zero",
+    "stat2Label": "off-the-shelf tools",
+    "stat3Value": "24/7",
+    "stat3Label": "AI agents that never sleep"
+  },
+  "contact": {
+    "label": "Get Started",
+    "headline": "Ready to double your output?",
+    "description": "See exactly how much time you're losing to non-creative work. Free 30-minute audit — no pitch, just data.",
+    "companyName": "AI Partner Company",
+    "tagline": "Helping YouTubers 10x their output",
+    "cta": "Get Your Free Audit",
+    "note": "30-min channel audit • Walk away with actionable insights"
+  },
+  "footer": {
+    "companyName": "AI Partner Company",
+    "copyright": "All rights reserved."
+  }
+}
