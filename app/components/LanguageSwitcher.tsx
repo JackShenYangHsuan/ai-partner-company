@@ -9,7 +9,7 @@ const localeNames: Record<Locale, string> = {
   "zh-TW": "中文",
 };
 
-export function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
+export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
   const pathname = usePathname();
 
   const redirectedPathname = (locale: Locale) => {
