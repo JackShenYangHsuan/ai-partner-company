@@ -1,3 +1,117 @@
+// Rewire Logo - Conceptual illustration of connection/rewiring
+
+export function RewireIcon({
+  className = "",
+  size = 40,
+  color = "currentColor"
+}: {
+  className?: string;
+  size?: number;
+  color?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Background rounded square */}
+      <rect
+        x="0"
+        y="0"
+        width="40"
+        height="40"
+        rx="10"
+        fill={color}
+      />
+
+      {/* Rewire concept: Two paths crossing - swapping connections */}
+      <g fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+        {/* Top-left to bottom-right path */}
+        <path d="M10 12 C 16 12, 20 20, 20 20 C 20 20, 24 28, 30 28" />
+
+        {/* Bottom-left to top-right path */}
+        <path d="M10 28 C 16 28, 20 20, 20 20 C 20 20, 24 12, 30 12" />
+
+        {/* Connection nodes at endpoints */}
+        <circle cx="10" cy="12" r="2.5" fill="white" stroke="none" />
+        <circle cx="10" cy="28" r="2.5" fill="white" stroke="none" />
+        <circle cx="30" cy="12" r="2.5" fill="white" stroke="none" />
+        <circle cx="30" cy="28" r="2.5" fill="white" stroke="none" />
+      </g>
+    </svg>
+  );
+}
+
+export function RewireLogo({
+  className = "",
+  iconSize = 36,
+  showText = true,
+  textColor = "#2D2A26",
+  iconColor = "#2D2A26"
+}: {
+  className?: string;
+  iconSize?: number;
+  showText?: boolean;
+  textColor?: string;
+  iconColor?: string;
+}) {
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>
+      <RewireIcon size={iconSize} color={iconColor} />
+      {showText && (
+        <span
+          className="text-xl tracking-tight"
+          style={{ color: textColor, fontFamily: "var(--font-display)", fontWeight: 800 }}
+        >
+          REWIRE
+        </span>
+      )}
+    </div>
+  );
+}
+
+// Alternative minimal icon - no background, just the wire illustration
+export function RewireIconMinimal({
+  className = "",
+  size = 40,
+  color = "currentColor"
+}: {
+  className?: string;
+  size?: number;
+  color?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Rewire concept: Two nodes connected by flowing wire */}
+      <g fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round">
+        {/* Left node */}
+        <circle cx="6" cy="20" r="4" fill={color} stroke="none" />
+
+        {/* Right node */}
+        <circle cx="34" cy="20" r="4" fill={color} stroke="none" />
+
+        {/* Flowing S-curve wire */}
+        <path
+          d="M10 20 C 15 20, 15 8, 20 8 C 25 8, 25 32, 30 32 C 32 32, 30 20, 30 20"
+          strokeWidth="3"
+        />
+      </g>
+    </svg>
+  );
+}
+
+// Keep the old components for backwards compatibility
 export function Logo({ className = "", size = 120 }: { className?: string; size?: number }) {
   return (
     <svg

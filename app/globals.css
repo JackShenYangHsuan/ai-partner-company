@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  /* Sophisticated warm palette - Browser Company inspired */
-  --cream: #FAF7F2;
-  --cream-dark: #F0EBE3;
-  --sand: #E8E0D5;
-  --terracotta: #C4704F;
-  --terracotta-dark: #A85A3A;
-  --charcoal: #2D2926;
-  --charcoal-light: #4A4543;
-  --warm-gray: #8B8178;
+  /* Conversion.ai exact palette */
+  --cream: #FDFCFB;
+  --cream-dark: #F5F3F0;
+  --sand: #E8E4DE;
+  --charcoal: #21201C;
+  --charcoal-light: #3C3B37;
+  --warm-gray: #7A7670;
+  --light-gray: #B8B5AF;
 
-  /* Subtle accent colors - muted, sophisticated */
-  --soft-blue: #6B9DAD;
-  --sage: #7A9A7A;
-  --dusty-rose: #C4A4A4;
-  --muted-gold: #B8A476;
+  /* Section accent colors */
+  --teal: #225E7D;
+  --teal-dark: #1A4A63;
+  --maroon: #7D2F1E;
+  --maroon-dark: #5E2316;
+  --purple: #684071;
+  --purple-dark: #4E3054;
+  --green: #156A47;
+  --green-dark: #0F4F35;
+
+  /* Accent colors for UI elements */
+  --accent-yellow: #D4A84B;
+  --accent-blue: #4A90D9;
+  --accent-green: #4CAF50;
 
   --background: var(--cream);
   --foreground: var(--charcoal);
@@ -27,39 +35,43 @@
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
   --color-sand: var(--sand);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-dark: var(--terracotta-dark);
   --color-charcoal: var(--charcoal);
   --color-charcoal-light: var(--charcoal-light);
   --color-warm-gray: var(--warm-gray);
-  --color-soft-blue: var(--soft-blue);
-  --color-sage: var(--sage);
-  --color-dusty-rose: var(--dusty-rose);
-  --color-muted-gold: var(--muted-gold);
+  --color-light-gray: var(--light-gray);
+  --color-teal: var(--teal);
+  --color-maroon: var(--maroon);
+  --color-purple: var(--purple);
+  --color-green: var(--green);
 }
 
+/* Base styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-display), system-ui, sans-serif;
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Selection styling */
 ::selection {
-  background-color: var(--terracotta);
+  background-color: var(--teal);
   color: var(--cream);
 }
 
-/* Refined animations */
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -68,52 +80,325 @@ html {
 }
 
 @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
   from {
     opacity: 0;
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
-@keyframes subtle-float {
-  0%, 100% {
-    transform: translateY(0);
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
   }
-  50% {
-    transform: translateY(-6px);
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Animation utilities */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
-
-.animate-fade-in-up-delay-1 {
+.animate-fade-in-up-1 {
   animation: fadeInUp 0.6s ease-out 0.1s forwards;
   opacity: 0;
 }
-
-.animate-fade-in-up-delay-2 {
+.animate-fade-in-up-2 {
   animation: fadeInUp 0.6s ease-out 0.2s forwards;
   opacity: 0;
 }
-
-.animate-fade-in-up-delay-3 {
+.animate-fade-in-up-3 {
   animation: fadeInUp 0.6s ease-out 0.3s forwards;
   opacity: 0;
 }
-
-.animate-fade-in-up-delay-4 {
+.animate-fade-in-up-4 {
   animation: fadeInUp 0.6s ease-out 0.4s forwards;
   opacity: 0;
 }
-
-.animate-subtle-float {
-  animation: subtle-float 6s ease-in-out infinite;
+.animate-fade-in-up-5 {
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+}
+.animate-fade-in-up-6 {
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+  opacity: 0;
 }
 
-/* Subtle grain texture */
+.animate-slide-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+.animate-slide-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ========================================
+   BUTTONS - Conversion.ai style
+   ======================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--charcoal-light);
+  transform: translateY(-1px);
+}
+
+.btn-primary-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--cream);
+  color: var(--charcoal);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary-light:hover {
+  background: var(--cream-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  color: var(--charcoal);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--sand);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--charcoal);
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+/* ========================================
+   DASHED BORDER PATTERN - Conversion.ai signature
+   ======================================== */
+
+.dashed-card {
+  background: var(--cream-dark);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      var(--sand) 8px,
+      var(--sand) 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      var(--sand) 8px,
+      var(--sand) 9px
+    );
+  background-size: 9px 9px;
+  background-position: -1px -1px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashed-card-inner {
+  background: var(--cream-dark);
+  margin: 1px;
+  border-radius: 7px;
+  height: calc(100% - 2px);
+}
+
+/* ========================================
+   SECTION BACKGROUNDS
+   ======================================== */
+
+.section-teal {
+  background: var(--teal);
+  color: var(--cream);
+}
+
+.section-maroon {
+  background: var(--maroon);
+  color: var(--cream);
+}
+
+.section-purple {
+  background: var(--purple);
+  color: var(--cream);
+}
+
+.section-green {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.section-dark {
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+/* ========================================
+   COLOR STRIPE ACCENTS
+   ======================================== */
+
+.color-stripe {
+  height: 8px;
+  display: flex;
+}
+
+.color-stripe > div {
+  flex: 1;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.text-display {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.text-body {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-full {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ========================================
+   UI MOCKUP STYLES
+   ======================================== */
+
+.ui-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--sand);
+}
+
+.ui-sidebar {
+  background: var(--cream-dark);
+  border-right: 1px solid var(--sand);
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.ui-badge-green {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.ui-badge-blue {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+.ui-badge-yellow {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+/* ========================================
+   DECORATIVE ELEMENTS
+   ======================================== */
+
+.accent-square {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.accent-square-teal { background: var(--teal); }
+.accent-square-maroon { background: var(--maroon); }
+.accent-square-purple { background: var(--purple); }
+.accent-square-green { background: var(--green); }
+
+/* ========================================
+   CARD HOVER EFFECTS
+   ======================================== */
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   GRAIN OVERLAY
+   ======================================== */
+
 .grain-overlay::before {
   content: "";
   position: fixed;
@@ -123,61 +408,6 @@ html {
   height: 100%;
   pointer-events: none;
   opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   z-index: 9999;
-}
-
-/* Refined card interactions */
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(45, 41, 38, 0.08);
-}
-
-/* Large step numbers - editorial style */
-.step-number {
-  font-size: 6rem;
-  font-weight: 200;
-  line-height: 1;
-  color: var(--sand);
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 0;
-  letter-spacing: -0.05em;
-}
-
-/* Highlight box - subtle, not childish */
-.highlight-box {
-  background: var(--sand);
-  padding: 2rem 2.5rem;
-  border-radius: 4px;
-}
-
-/* Underline accent - simple, refined */
-.accent-underline {
-  position: relative;
-  display: inline;
-}
-
-.accent-underline::after {
-  content: "";
-  position: absolute;
-  bottom: 0.1em;
-  left: 0;
-  width: 100%;
-  height: 0.35em;
-  background: var(--terracotta);
-  opacity: 0.25;
-  z-index: -1;
-}
-
-/* Decorative line */
-.decorative-line {
-  width: 60px;
-  height: 2px;
-  background: var(--terracotta);
 }
