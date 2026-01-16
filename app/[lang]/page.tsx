@@ -360,6 +360,40 @@ function ProcessArrow() {
 export default function HomePage() {
   const [email, setEmail] = useState("");
   const [youtubeUrl, setYoutubeUrl] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email || !youtubeUrl) {
+      alert("請填寫 Email 和 YouTube 連結");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/send-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, youtubeUrl }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setEmail("");
+        setYoutubeUrl("");
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <main className="min-h-screen" style={{ background: colors.creamDark }}>
@@ -793,43 +827,60 @@ export default function HomePage() {
 
           <FadeIn delay={200}>
             <div className="mt-8 md:mt-12 text-center">
-              <div
+              <form
+                onSubmit={handleSubmit}
                 className="p-5 md:p-8 rounded-2xl max-w-lg mx-auto"
                 style={{ background: colors.cream, border: `1px solid ${colors.sand}` }}
               >
-                <div className="space-y-3 md:space-y-4">
-                  <input
-                    type="email"
-                    placeholder="你的 Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg text-base outline-none transition-all duration-300 focus:ring-2"
-                    style={{
-                      background: colors.creamDark,
-                      border: `1px solid ${colors.sand}`,
-                      color: colors.charcoal,
-                    }}
-                  />
-                  <input
-                    type="url"
-                    placeholder="YouTube 影片連結"
-                    value={youtubeUrl}
-                    onChange={(e) => setYoutubeUrl(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg text-base outline-none transition-all duration-300 focus:ring-2"
-                    style={{
-                      background: colors.creamDark,
-                      border: `1px solid ${colors.sand}`,
-                      color: colors.charcoal,
-                    }}
-                  />
-                  <button
-                    className="w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
-                    style={{ background: colors.accent, color: colors.cream }}
-                  >
-                    寄到我信箱
-                  </button>
-                </div>
-              </div>
+                {submitStatus === "success" ? (
+                  <div className="py-8 text-center">
+                    <div className="text-4xl mb-4">✓</div>
+                    <p className="text-lg font-medium" style={{ color: colors.accent }}>
+                      收到了！我們會盡快寄報告給你
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-3 md:space-y-4">
+                    <input
+                      type="email"
+                      placeholder="你的 Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="w-full px-4 py-3 rounded-lg text-base outline-none transition-all duration-300 focus:ring-2"
+                      style={{
+                        background: colors.creamDark,
+                        border: `1px solid ${colors.sand}`,
+                        color: colors.charcoal,
+                      }}
+                    />
+                    <input
+                      type="url"
+                      placeholder="YouTube 影片連結"
+                      value={youtubeUrl}
+                      onChange={(e) => setYoutubeUrl(e.target.value)}
+                      required
+                      className="w-full px-4 py-3 rounded-lg text-base outline-none transition-all duration-300 focus:ring-2"
+                      style={{
+                        background: colors.creamDark,
+                        border: `1px solid ${colors.sand}`,
+                        color: colors.charcoal,
+                      }}
+                    />
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 disabled:opacity-50"
+                      style={{ background: colors.accent, color: colors.cream }}
+                    >
+                      {isSubmitting ? "送出中..." : "寄到我信箱"}
+                    </button>
+                    {submitStatus === "error" && (
+                      <p className="text-sm text-red-600">發送失敗，請稍後再試</p>
+                    )}
+                  </div>
+                )}
+              </form>
             </div>
           </FadeIn>
         </div>

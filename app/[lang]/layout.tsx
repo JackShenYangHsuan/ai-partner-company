@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Noto_Sans_TC, DM_Sans } from "next/font/google";
 import "../globals.css";
 import { i18n, type Locale } from "../../i18n-config";
@@ -20,21 +21,21 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AI Partner | 訪談型 YouTuber 的 AI 助理團隊",
+  title: "REWIRE - 創作者的 AI 夥伴",
   description:
-    "從來賓研究、訪談準備到後製發布，讓 AI 處理繁瑣工作，你專注在創作真正有價值的內容。",
+    "我們直接進到你的創作流程，找出 AI 機會點，幫你省時間，省成本，做更多更高品質的內容。",
   keywords: [
     "AI 助理",
     "YouTuber 工具",
-    "訪談自動化",
-    "Podcast 製作",
     "創作者工具",
     "AI 工作流程",
+    "AI 自動化",
+    "REWIRE",
   ],
   openGraph: {
-    title: "AI Partner | 訪談型 YouTuber 的 AI 助理團隊",
+    title: "REWIRE - 創作者的 AI 夥伴",
     description:
-      "從來賓研究、訪談準備到後製發布，讓 AI 處理繁瑣工作。",
+      "我們直接進到你的創作流程，找出 AI 機會點，幫你省時間，省成本。",
     type: "website",
   },
 };
@@ -56,6 +57,7 @@ export default async function RootLayout({
     <html lang={lang}>
       <body className={`${notoSansTC.variable} ${dmSans.variable} antialiased grain-overlay`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
